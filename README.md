@@ -6,13 +6,15 @@ Academic Work
 
 > Conecction with a fake API;
 
-[Desing](https://youtu.be/uSljGJGSl6w)
+> [Desing](https://youtu.be/uSljGJGSl6w)
 
-[JsonEditor](https://jsoneditoronline.org/#left=local.yocafe&right=local.ponede)
+> [JsonEditor](https://jsoneditoronline.org/#left=local.yocafe&right=local.ponede)
 
-[JsonPlaceHolder](https://jsonplaceholder.typicode.com/) 
+> [JsonPlaceHolder](https://jsonplaceholder.typicode.com/) 
 
-[IdGenerator](https://www.uuidgenerator.net/version1)
+>>[TutorialJasonPlaceHolder](https://youtu.be/ID_JjpbZrmU)
+
+> [IdGenerator](https://www.uuidgenerator.net/version1)
 
 
 
