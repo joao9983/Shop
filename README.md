@@ -6,8 +6,7 @@ Academic Work
 
 > Conecction with a fake API;
 
-
-[Desing](https://dribbble.com/shots/18876097-Grocery-Shop-UI)
+[Desing](https://youtu.be/uSljGJGSl6w)
 
 [JsonEditor](https://jsoneditoronline.org/#left=local.yocafe&right=local.ponede)
 
