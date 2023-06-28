@@ -2,7 +2,7 @@
 Academic Work
 
 > FrontEnd development;
-> Conecction with a fake API;
+>> Conecction with a fake API;
 
 
 [Desing](https://dribbble.com/shots/18876097-Grocery-Shop-UI)
