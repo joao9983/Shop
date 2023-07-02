@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
 class LocationWidget extends StatefulWidget {
   const LocationWidget({super.key});
@@ -28,4 +29,10 @@ class _LocationWidgetState extends State<LocationWidget> {
       ],
     );
   }
+}
+
+getLocation() async {
+  Position postion = await Geolocator.getCurrentPosition();
+  // ignore: avoid_print
+  print(postion);
 }

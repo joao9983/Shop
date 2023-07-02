@@ -12,6 +12,7 @@ class ProfileWidget extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: height * 0.028,
+          backgroundColor: Colors.white,
           backgroundImage: const NetworkImage(
               "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"),
         )
