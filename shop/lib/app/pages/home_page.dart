@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop/app/shared/location_widget.dart';
+import 'package:shop/app/shared/profile_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,7 +16,15 @@ class _HomePageState extends State<HomePage> {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Minha Página Inicial'),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            LocationWidget(),
+            ProfileWidget(),
+          ],
+        ),
       ),
       body: Center(
         child: Padding(

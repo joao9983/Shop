@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop/app/pages/home_page.dart';
 
 class InitialPage extends StatelessWidget {
   const InitialPage({Key? key}) : super(key: key);
@@ -90,7 +91,14 @@ class InitialPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: height * 0.065),
               child: ElevatedButton(
-                onPressed: () {}, //função para chamar a HomePage
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        // ignore: prefer_const_constructors
+                        builder: (context) => HomePage(),
+                      ));
+                }, //função para chamar a HomePage
                 style: ElevatedButton.styleFrom(
                   elevation: 12.0,
                   textStyle: const TextStyle(color: Colors.white),
