@@ -18,10 +18,17 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            LocationWidget(),
+            const LocationWidget(),
+            TextButton(
+              onPressed: () {
+                // getLocation();
+              },
+              child: const Text("aqui"),
+            ),
+            // ignore: prefer_const_constructors
             ProfileWidget(),
           ],
         ),
