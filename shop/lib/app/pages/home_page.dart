@@ -18,30 +18,56 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Row(
+        title: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const LocationWidget(),
-            TextButton(
-              onPressed: () {
-                // getLocation();
-              },
-              child: const Text("aqui"),
-            ),
-            // ignore: prefer_const_constructors
+            LocationWidget(),
             ProfileWidget(),
           ],
         ),
       ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              vertical: height * 0, horizontal: width * 0.09),
-          child: const Text(
-            'Olá, bem-vindo à minha página inicial!',
-            style: TextStyle(fontSize: 24),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                    width * 0.055, height * 0.01, width * 0, height * 0.02),
+                child: Text(
+                  "Bom dia, amigo!",
+                  style: TextStyle(
+                      fontSize: height * 0.026, color: Colors.grey[600]),
+                ),
+              ),
+            ],
           ),
-        ),
+          Row(
+            children: [
+              Padding(
+                padding:
+                    EdgeInsets.fromLTRB(width * 0.055, height * 0.01, 0, 0),
+                child: Text(
+                  "Vamos pedir itens frescos",
+                  style:
+                      TextStyle(fontSize: height * 0.04, color: Colors.black),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding:
+                    EdgeInsets.fromLTRB(width * 0.055, height * 0.01, 0, 0),
+                child: Text(
+                  "para você!",
+                  style:
+                      TextStyle(fontSize: height * 0.04, color: Colors.black),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
