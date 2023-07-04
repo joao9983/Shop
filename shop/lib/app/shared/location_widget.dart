@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:shop/app/shared/pop_erro_location_widget.dart';
 
 class LocationWidget extends StatefulWidget {
   const LocationWidget({super.key});
@@ -27,7 +28,6 @@ class _LocationWidgetState extends State<LocationWidget> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    // ignore: unused_local_variable
     final width = MediaQuery.of(context).size.width;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,8 +43,8 @@ class _LocationWidgetState extends State<LocationWidget> {
             street != null
                 ? Text(
                     '$street,',
-                    style: TextStyle(
-                        fontSize: height * 0.024, color: Colors.black),
+                    style:
+                        TextStyle(fontSize: height * 0.02, color: Colors.black),
                   )
                 : Text(
                     "Erro ao pegar localização",
@@ -55,8 +55,8 @@ class _LocationWidgetState extends State<LocationWidget> {
             locality != null
                 ? Text(
                     ' $locality',
-                    style: TextStyle(
-                        fontSize: height * 0.023, color: Colors.black),
+                    style:
+                        TextStyle(fontSize: height * 0.02, color: Colors.black),
                   )
                 : Container()
           ],
@@ -65,22 +65,25 @@ class _LocationWidgetState extends State<LocationWidget> {
     );
   }
 
-//deve ser chamada quando a home for acessada.
   getLocation() async {
-    Position position = await Geolocator.getCurrentPosition();
+    try {
+      Position position = await Geolocator.getCurrentPosition();
 
-    setState(() {
-      latitude = position.latitude;
-      longitude = position.longitude;
-    });
+      setState(() {
+        latitude = position.latitude;
+        longitude = position.longitude;
+      });
 
-    List<Placemark> local =
-        await placemarkFromCoordinates(position.latitude, position.longitude);
+      List<Placemark> local =
+          await placemarkFromCoordinates(position.latitude, position.longitude);
 
-    if (local != null && local.isNotEmpty) {
-      print(local[0]);
-      street = local[0].street;
-      locality = local[0].locality;
+      if (local != null && local.isNotEmpty) {
+        print(local[0]);
+        street = local[0].street;
+        locality = local[0].locality;
+      }
+    } catch (e) {
+      exibirPopup(context);
     }
   }
 }
