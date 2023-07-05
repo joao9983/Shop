@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shop/app/shared/location_widget.dart';
-import 'package:shop/app/shared/profile_widget.dart';
+
+import 'package:shop/app/widgets/location_widget.dart';
+import 'package:shop/app/widgets/profile_widget.dart';
+import 'package:shop/app/widgets/time_widget.dart';
+
+import '../widgets/categories_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -28,18 +32,19 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(
-                    width * 0.055, height * 0.01, width * 0, height * 0.02),
-                child: Text(
-                  "Bom dia, amigo!",
+          Padding(
+            padding: EdgeInsets.fromLTRB(
+                width * 0.055, height * 0.01, width * 0, height * 0.02),
+            child: Row(
+              children: [
+                const TimeWidget(),
+                Text(
+                  " Amigo!",
                   style: TextStyle(
-                      fontSize: height * 0.026, color: Colors.grey[600]),
+                      fontSize: height * 0.022, color: Colors.grey[600]),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           Row(
             children: [
@@ -66,6 +71,23 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ],
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(
+                width * 0.055, height * 0.07, width * 0, height * 0),
+            child: Row(
+              children: [
+                Text(
+                  "Categorias",
+                  style: TextStyle(fontSize: height * 0.025),
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(
+                width * 0.055, height * 0.07, width * 0.055, height * 0),
+            child: const CategoriesWidget(),
           ),
         ],
       ),
