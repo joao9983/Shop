@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey[200],
         elevation: 0,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,66 +30,69 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(
-                width * 0.055, height * 0.01, width * 0, height * 0.02),
-            child: Row(
+      body: Container(
+        color: Colors.grey[200],
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                  width * 0.055, height * 0.01, width * 0, height * 0.02),
+              child: Row(
+                children: [
+                  const TimeWidget(),
+                  Text(
+                    " Amigo!",
+                    style: TextStyle(
+                        fontSize: height * 0.022, color: Colors.grey[600]),
+                  ),
+                ],
+              ),
+            ),
+            Row(
               children: [
-                const TimeWidget(),
-                Text(
-                  " Amigo!",
-                  style: TextStyle(
-                      fontSize: height * 0.022, color: Colors.grey[600]),
+                Padding(
+                  padding:
+                      EdgeInsets.fromLTRB(width * 0.055, height * 0.01, 0, 0),
+                  child: Text(
+                    "Vamos pedir itens frescos",
+                    style:
+                        TextStyle(fontSize: height * 0.04, color: Colors.black),
+                  ),
                 ),
               ],
             ),
-          ),
-          Row(
-            children: [
-              Padding(
-                padding:
-                    EdgeInsets.fromLTRB(width * 0.055, height * 0.01, 0, 0),
-                child: Text(
-                  "Vamos pedir itens frescos",
-                  style:
-                      TextStyle(fontSize: height * 0.04, color: Colors.black),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Padding(
-                padding:
-                    EdgeInsets.fromLTRB(width * 0.055, height * 0.01, 0, 0),
-                child: Text(
-                  "para você!",
-                  style:
-                      TextStyle(fontSize: height * 0.04, color: Colors.black),
-                ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(
-                width * 0.055, height * 0.07, width * 0, height * 0),
-            child: Row(
+            Row(
               children: [
-                Text(
-                  "Categorias",
-                  style: TextStyle(fontSize: height * 0.025),
-                )
+                Padding(
+                  padding:
+                      EdgeInsets.fromLTRB(width * 0.055, height * 0.01, 0, 0),
+                  child: Text(
+                    "para você!",
+                    style:
+                        TextStyle(fontSize: height * 0.04, color: Colors.black),
+                  ),
+                ),
               ],
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(
-                width * 0.055, height * 0.07, width * 0.055, height * 0),
-            child: const CategoriesWidget(),
-          ),
-        ],
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                  width * 0.055, height * 0.07, width * 0, height * 0),
+              child: Row(
+                children: [
+                  Text(
+                    "Categorias",
+                    style: TextStyle(fontSize: height * 0.025),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                  width * 0.055, height * 0.07, width * 0.055, height * 0),
+              child: const CategoriesWidget(),
+            ),
+          ],
+        ),
       ),
     );
   }

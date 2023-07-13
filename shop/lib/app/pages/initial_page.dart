@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/app/pages/home_page.dart';
+import 'package:shop/app/pages/login_page.dart';
 
 class InitialPage extends StatelessWidget {
   const InitialPage({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class InitialPage extends StatelessWidget {
                   width: width * 0.6, // Largura da imagem
                   height: height * 0.5, // Altura da imagem
                   fit: BoxFit.cover, // Modo de ajuste da imagem
-                )
+                ),
               ],
             ),
             Column(
@@ -95,8 +95,7 @@ class InitialPage extends StatelessWidget {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        // ignore: prefer_const_constructors
-                        builder: (context) => HomePage(),
+                        builder: (context) => const LoginPage(),
                       ));
                 }, //função para chamar a HomePage
                 style: ElevatedButton.styleFrom(
