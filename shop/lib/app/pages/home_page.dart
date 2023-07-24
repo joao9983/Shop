@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Padding(
             padding: EdgeInsets.fromLTRB(
-                width * 0.055, height * 0.01, width * 0, height * 0.02),
+                width * 0.055, height * 0.01, width * 0, height * 0.01),
             child: Row(
               children: [
                 const TimeWidget(),
@@ -53,8 +53,10 @@ class _HomePageState extends State<HomePage> {
                     EdgeInsets.fromLTRB(width * 0.055, height * 0.01, 0, 0),
                 child: Text(
                   "Vamos pedir itens frescos",
-                  style:
-                      TextStyle(fontSize: height * 0.04, color: Colors.black),
+                  style: TextStyle(
+                      fontSize: height * 0.04,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
                 ),
               ),
             ],
@@ -66,15 +68,17 @@ class _HomePageState extends State<HomePage> {
                     EdgeInsets.fromLTRB(width * 0.055, height * 0.01, 0, 0),
                 child: Text(
                   "para você!",
-                  style:
-                      TextStyle(fontSize: height * 0.04, color: Colors.black),
+                  style: TextStyle(
+                      fontSize: height * 0.04,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
                 ),
               ),
             ],
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(
-                width * 0.055, height * 0.07, width * 0, height * 0),
+                width * 0.055, height * 0.05, width * 0, height * 0),
             child: Row(
               children: [
                 Text(
@@ -84,10 +88,20 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+          //aqui q vai ser diferente
           Padding(
             padding: EdgeInsets.fromLTRB(
-                width * 0.055, height * 0.07, width * 0.055, height * 0),
+                width * 0.055, height * 0.02, width * 0.055, height * 0),
             child: const CategoriesWidget(),
+          ),
+          //aqui já n é mais diferente
+          Padding(
+            padding: EdgeInsets.fromLTRB(
+                width * 0.1, height * 0.1, width * 0.1, height * 0.1),
+            child: Container(
+              color: Colors.amber,
+              child: const Text("EUEUEUE"),
+            ),
           ),
         ],
       ),

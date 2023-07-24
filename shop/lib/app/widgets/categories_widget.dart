@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'dados_test.dart';
+import '../dados_test.dart';
 
 class CategoriesWidget extends StatefulWidget {
   const CategoriesWidget({super.key});

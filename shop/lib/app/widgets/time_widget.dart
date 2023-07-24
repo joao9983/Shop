@@ -26,9 +26,15 @@ class _TimeWidgetState extends State<TimeWidget> {
     DateFormat hour = DateFormat('HH:mm');
     String newHour = hour.format(now);
 
-    setState(() {
-      currentTime = newHour;
-    });
+    if (mounted) {
+      setState(() {
+        currentTime = newHour;
+      });
+    }
+
+    if (mounted) {
+      Future.delayed(const Duration(seconds: 1), newTime);
+    }
 
     Future.delayed(const Duration(seconds: 1), newTime);
   }
