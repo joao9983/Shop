@@ -18,52 +18,64 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
     return SizedBox(
       width: width * 1,
       height: height * 0.2,
-      child: ListView(
+      child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          Container(
-            width: width * 0.33,
-            decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 252, 236, 189),
-                borderRadius: BorderRadius.circular(width * 0.03)),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: height * 0.02),
-                  child: Container(
-                    width: width,
-                    height: height * 0.1,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            categorias.isNotEmpty ? categorias[0].img : ""),
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  width: width * 0.2,
+        itemCount: categorias.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+              padding: EdgeInsets.symmetric(horizontal: width * 0.01),
+              child: GestureDetector(
+                onTap: () {
+                  //       Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => categorias.isNotEmpty
+                  //                       ? categorias[index].rota : "" ),
+                  // );
+                },
+                child: Container(
+                  width: width * 0.33,
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(width * 0.05)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                      color: Colors.indigo[400],
+                      borderRadius: BorderRadius.circular(width * 0.03)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(categorias.isNotEmpty ? categorias[0].nome : ""),
+                      Padding(
+                        padding: EdgeInsets.only(top: height * 0.02),
+                        child: Container(
+                          width: width,
+                          height: height * 0.1,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage(categorias.isNotEmpty
+                                  ? categorias[index].img
+                                  : ""),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: width * 0.2,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(width * 0.05)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(categorias.isNotEmpty
+                                ? categorias[index].nome
+                                : ""),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: height * 0,
+                      ),
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: height * 0,
-                )
-              ],
-            ),
-          ),
-          SizedBox(
-            width: width * 0.02,
-          ),
-        ],
+              ));
+        },
       ),
     );
   }

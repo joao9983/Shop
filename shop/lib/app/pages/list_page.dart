@@ -55,7 +55,7 @@ class _ListPageState extends State<ListPage> {
                       ),
                       Padding(
                         padding: EdgeInsets.fromLTRB(
-                            width * 0.08, height * 0, width * 0, height * 0),
+                            width * 0.04, height * 0, width * 0, height * 0),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -111,7 +111,7 @@ class _ListPageState extends State<ListPage> {
                       ),
                       Padding(
                         padding: EdgeInsets.fromLTRB(
-                            width * 0.08, height * 0, width * 0, height * 0),
+                            width * 0.04, height * 0, width * 0, height * 0),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
