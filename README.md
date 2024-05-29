@@ -6,7 +6,8 @@ Academic Work
 
 > Conecction with a fake API;
 
-![image](https://github.com/joao9983/Shop/assets/72822834/194dafbe-2f51-4fba-8437-0034c903ac31)
+![image](https://github.com/joao9983/Shop/assets/72822834/a235ec13-332b-40b7-aa06-31e3a3d294a9)
+
 
 > [JsonEditor](https://jsoneditoronline.org/#left=local.yocafe&right=local.ponede)
 
